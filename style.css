@@ -1,0 +1,58 @@
+h1 {
+  text-align: center;
+  font-size: min(10vmin, 2rem);
+}
+.click-me {
+  cursor: pointer;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+.button-container {
+  box-sizing: border-box;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  width: 100vmin;
+  height: 100vmin;
+  padding: 1%;
+  max-width: 37.5rem;
+  max-height: 37.5rem;
+  gap: 1%;
+}
+button {
+  width: 0;
+  height: 0;
+  min-width: 100%;
+  min-height: 100%;
+  animation-duration: 0.8s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  transition: box-shadow 0.25s ease;
+  cursor: pointer;
+}
+button:hover {
+  box-shadow: 0 60px 80px rgba(0, 0, 0, 0.6), 0 45px 26px rgba(0, 0, 0, 0.14);
+}
+.disabled {
+  pointer-events: none;
+}
+.glow {
+  animation: glowing 1s;
+}
+
+/* Keyframes for the glow animation */
+@keyframes glowing {
+  0%,
+  100% {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  50% {
+    box-shadow: 0 60px 80px rgba(0, 0, 0, 0.6), 0 45px 26px rgba(0, 0, 0, 0.14);
+  }
+}
